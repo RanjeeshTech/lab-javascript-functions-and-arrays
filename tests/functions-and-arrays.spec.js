@@ -31,14 +31,6 @@ describe('Find the greatest number', () => {
     expect(greatestOfTwoNumbers(4, 4)).toBe(4);
   });
 });
-function greatestOfTwoNumbers(a,b){
-  if(a>=b){
-    return a;  
-  }
-  else if(b>=a){
-    return b;
-  }
-}
 
 describe('Find the scary word', () => {
   it('should create a function named findScaryWord', () => {
@@ -67,27 +59,6 @@ describe('Find the scary word', () => {
   });
 });
 
-function findScaryWord(words){
-  if(words.length==0){
-    return null;
-  }  
-  else if(words.length==1){
-    return words[0];
-  }
-  else if(words.length==2){
-    if(words[0].length==words[1].length){
-      return words[0];
-    }
-  }
-  else if(words.length>2){
-    for(i=0;i<words.length;i++){      
-      if(words[0].length<words[i].length){
-        words[0] = words[i];
-      }   
-    }
-    return words[0];
-  }
-}
 
 describe('Calculate the sum of array of numbers', () => {
   it('should create a function named netPrice', () => {
@@ -111,15 +82,7 @@ describe('Calculate the sum of array of numbers', () => {
   });
 });
 
-function netPrice(numbers){  
-    let sum=0;
-    for(i=0;i<numbers.length;i++){
-      if(numbers[i]!=0){
-        sum = sum +numbers[i];
-      }     
-    }      
-    return sum; 
-}
+
 describe('Bonus: Calculate the sum', () => {
   it('should create a function named add', () => {
     expect(typeof add).toBe('function');
@@ -163,25 +126,6 @@ describe('Bonus: Calculate the sum', () => {
   });
 });
 
-function add(numbers){  
-  let sum=0;
-  for(i=0;i<numbers.length;i++){
-    if(typeof numbers[i]=='string'){      
-        sum = sum + numbers[i].length;    
-    } 
-    else if(numbers[i]==true){
-      sum = sum+1;
-    }
-    else if(numbers[i]==false){
-      sum = sum +0;
-    }
-    else if(typeof numbers[i]==="number"){      
-        sum = sum + numbers[i];      
-    }    
-    else throw Error("Unsupported data type sir or ma'am");
-  }      
-  return sum; 
-}
 
 describe('Calculate the average of an array of numbers', () => {
   it('should create a function named midPointOfLevels', () => {
@@ -208,18 +152,7 @@ describe('Calculate the average of an array of numbers', () => {
   });
 });
 
-function midPointOfLevels(numbersAvg){
-  let sum = 0;
-  if(numbersAvg.length==0){
-    return null;
-  }
-  else{
-  for(let i=0;i<numbersAvg.length;i++){
-    sum = sum+numbersAvg[i];    
-  }
-  return sum/numbersAvg.length;
-}
-}
+
 
 describe('Calculate the average of an array of strings', () => {
   it('should create a function named averageWordLength', () => {
@@ -254,18 +187,7 @@ describe('Calculate the average of an array of strings', () => {
   });
 });
 
-function averageWordLength(wordsArr){
-  let sum=0;
-  if(wordsArr.length==0){
-    return null;
-  }
-  else{
-  for(let i=0;i<wordsArr.length;i++){
-    sum = sum + wordsArr[i].length;
-  }
-  return sum/wordsArr.length;
-}
-}
+
 
 describe('Bonus: Calculate the average of a mixed elements array', () => {
   it('should create a function named avg', () => {
@@ -285,30 +207,6 @@ describe('Bonus: Calculate the average of a mixed elements array', () => {
   });
 });
 
-function avg(mixedArr){
-  let sum=0;
-  if(mixedArr.length==0){
-    return null;
-  }
-  else{
-  for(let i=0;i<mixedArr.length;i++){
-    if(typeof(mixedArr[i]) == 'string'){
-      sum = sum+mixedArr[i].length;
-    }
-     else if(mixedArr[i]==true){
-      sum = sum + 1;      
-    }
-    else if(mixedArr[i]==false){
-      sum = sum + 0;      
-    }
-    else {
-      sum = sum+mixedArr[i];
-    }
-  }
-  var ans = parseFloat( (sum/mixedArr.length).toFixed(2));
-  return ans;
-}
-}
 
 
 
@@ -353,22 +251,7 @@ describe('Unique array', () => {
   });
 });
 
-function uniqueArray(wordsUnique){
-  let arr=[];
-  if(wordsUnique.length==0){
-    return null;
-  }
- else{
-  for(let i=0;i<wordsUnique.length;i++){
-    for(let j=i+1;j<wordsUnique.length-1;j++){
-   if(wordsUnique[i] !=  wordsUnique[i+1]){
-     arr[i] = wordsUnique[i];
-   }
-   }  
-  }
-  return arr;  
- }
-}
+
 
 describe('Find elements', () => {
   it('should create a function named searchElement', () => {
@@ -401,18 +284,6 @@ describe('Find elements', () => {
   });
 });
 
-function searchElement(wordsFind,_find){
-  if(wordsFind.length==0){
-    return null;
-  }
-  else{
-    for(let i=0;i<wordsFind.length;i++){
-      if(wordsFind[i]==_find){
-        return true;
-      }
-    }
-  }
-}
 
 describe('Count repetition', () => {
   it('should create a function named howManyTimesElementRepeated', () => {
@@ -453,15 +324,6 @@ describe('Count repetition', () => {
   });
 });
 
-function howManyTimesElementRepeated(wordsCount,_count){
-  let sum=0;
-  for(let i=0;i<wordsCount.length;i++){
-    if(wordsCount[i]==_count){
-      sum=sum+1;
-    }
-  }
-  return sum;
-}
 
 describe('Bonus Quest - greatestProduct', () => {
   it('should create a function named maximumProduct', () => {
@@ -495,16 +357,3 @@ describe('Bonus Quest - greatestProduct', () => {
   }); 
 });
 
-function maximumProduct(matrix){
-  let sum=0;
-  for(let i=0;i<matrix.length;i++){
-    for(let j=0;j<matrix[i].length;j++){
-      let mmatrix = matrix[i];
-      sum = sum+mmatrix[j];
-    }
-  }
-  let len = matrix.length*matrix.length;
-  if(sum==len){
-    return 1;
-  }
-}
