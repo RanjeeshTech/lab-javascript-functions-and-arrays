@@ -3,7 +3,7 @@
 //If num1 is greater it returns num1
 //If num2 is greater it returns num2
 function greatestOfTwoNumbers(num1,num2){
-  if(num1>=num2){
+  if(num1>num2){
     return num1;  
   }
   else{
