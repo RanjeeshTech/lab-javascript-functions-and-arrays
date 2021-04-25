@@ -1,14 +1,20 @@
 // Progression #1: Greatest of the two numbers
-function greatestOfTwoNumbers(a,b){
-  if(a>=b){
-    return a;  
+
+//If num1 is greater it returns num1
+//If num2 is greater it returns num2
+function greatestOfTwoNumbers(num1,num2){
+  if(num1>=num2){
+    return num1;  
   }
-  else if(b>=a){
-    return b;
+  else if(num2>=num1){
+    return num2;
   }
 }
 
 // Progression #2: The lengthy word
+
+//If an emty array is given it returns null
+//Or else it returns the word with longest length
 const words = ['mystery', 'brother', 'aviator', 'crocodile', 'pearl', 'orchard', 'crackpot'];
 function findScaryWord(words){
   if(words.length==0){
@@ -33,6 +39,9 @@ function findScaryWord(words){
 }
 
 // Progression #3: Net Price
+
+//It returns 0 if empty array is given or if all the elements are 0
+//Else it returns the sum of the elements in the array
 const numbers = [6, 12, 1, 18, 13, 16, 2, 1, 8, 10];
 function netPrice(numbers){  
   let sum=0;
@@ -44,7 +53,10 @@ function netPrice(numbers){
   return sum; 
 }
 // Progression #4: Calculate the average
-// Progression 4.1: Array of numbers
+
+//It returns 0 if empty array is given or if all the elements are 0
+//If one number is given in array it will return the number
+//Else it returns the sum of the elements in the array
 const numbersAvg = [2, 6, 9, 10, 7, 4, 1, 9];
 function add(numbers){  
   let sum=0;
@@ -66,7 +78,8 @@ function add(numbers){
   return sum; 
 }
 
-// Progression 4.2: Array of strings
+// Progression 4.1: Array of numbers
+
 const wordsArr = ['seat', 'correspond', 'linen', 'motif', 'hole', 'smell', 'smart', 'chaos', 'fuel', 'palace'];
 function midPointOfLevels(numbersAvg){
   let sum = 0;
@@ -79,6 +92,8 @@ function midPointOfLevels(numbersAvg){
   }
   return sum/numbersAvg.length;
 }
+
+// Progression 4.2: Array of strings
 }
 function averageWordLength(wordsArr){
   let sum=0;
@@ -118,6 +133,9 @@ function avg(mixedArr){
 }
 
 // Progression #5: Unique arrays
+
+//Returns null if array is empty
+//If an element in the array does not repeat it takes them in a seperate array if the element repeats it will not consider the repeated element
 const wordsUnique = [
   'bread',
   'jam',
@@ -149,6 +167,9 @@ function uniqueArray(wordsUnique){
  }
 }
 // Progression #6: Find elements
+
+//Returns null if empty array is given 
+//Else it checks whether the element given as argument is present in the array if present returns true
 const wordsFind = ['machine', 'subset', 'trouble', 'starting', 'matter', 'eating', 'truth', 'disobedience'];
 
 function searchElement(wordsFind,_find){
@@ -164,6 +185,9 @@ function searchElement(wordsFind,_find){
   }
 }
 // Progression #7: Count repetition
+
+//Returns zero if empty array is given
+//Or else If any element repeats again count increases and it will return the count
 const wordsCount = [
   'machine',
   'matter',
@@ -179,16 +203,16 @@ const wordsCount = [
 ];
 
 function howManyTimesElementRepeated(wordsCount,_count){
-  let sum=0;
+  let count=0;
   for(let i=0;i<wordsCount.length;i++){
     if(wordsCount[i]==_count){
-      sum=sum+1;
+      count=count+1;
     }
   }
-  return sum;
+  return count;
 }
 // Progression #8: Bonus
-
+//Return 1 if all the elements in the array are 1
 const matrix = [
   [08, 02, 22, 97, 38, 15, 00, 40, 00, 75],
   [49, 49, 99, 40, 17, 81, 18, 57, 60, 87],
